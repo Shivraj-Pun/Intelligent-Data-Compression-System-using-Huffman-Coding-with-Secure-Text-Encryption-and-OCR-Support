@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Unblurring</title>
+</head>
+<body>
+    <h2>Unblur Image (Root Only)</h2>
+    <form method="post">
+        <input type="password" name="password" placeholder="Enter Root Password" required><br>
+        <button type="submit">Unblur and Download</button>
+    </form>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+</body>
+</html>
