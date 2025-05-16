@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Encryption App</title>
+</head>
+<body>
+    <h2>Text Encryption and Decryption</h2>
+    <form method="post">
+        <input type="text" name="plain_text" placeholder="Enter text to encrypt">
+        <button type="submit" name="encrypt">Encrypt</button>
+    </form>
+    <p>Encrypted Text: {{ encrypted_text }}</p>
+
+    <form method="post">
+        <input type="text" name="encrypted_text" placeholder="Enter text to decrypt">
+        <button type="submit" name="decrypt">Decrypt</button>
+    </form>
+    <p>Decrypted Text: {{ decrypted_text }}</p>
+
+    <a href="/image-blur">Go to Image Blurring</a>
+</body>
+</html>
