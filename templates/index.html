@@ -1,22 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Encryption App</title>
+    <title>Home - Intelligent Data Compression & Encryption System</title>
 </head>
 <body>
-    <h2>Text Encryption and Decryption</h2>
-    <form method="post">
-        <input type="text" name="plain_text" placeholder="Enter text to encrypt">
-        <button type="submit" name="encrypt">Encrypt</button>
-    </form>
-    <p>Encrypted Text: {{ encrypted_text }}</p>
+    <h2>Welcome to the Intelligent Data Compression and Encryption System</h2>
 
-    <form method="post">
-        <input type="text" name="encrypted_text" placeholder="Enter text to decrypt">
-        <button type="submit" name="decrypt">Decrypt</button>
-    </form>
-    <p>Decrypted Text: {{ decrypted_text }}</p>
+    <h3>🔹 Compression & Decompression 🔹</h3>
+    <ul>
+        <li><a href="/compress_text">Compress Text File</a></li>
+        <li><a href="/decompress_text">Decompress Text File</a></li>
+        <li><a href="/compress_image">Compress Image File</a></li>
+        <li><a href="/decompress_image">Decompress Image File</a></li>
+        <li><a href="/compress_audio">Compress Audio File</a></li>
+        <li><a href="/decompress_audio">Decompress Audio File</a></li>
+    </ul>
 
-    <a href="/image-blur">Go to Image Blurring</a>
+    <h3>🔹 Image Encryption & Decryption 🔹</h3>
+    <ul>
+        <li><a href="/login">Login to Access Encryption & Decryption</a></li>
+        <li><a href="/image-blur">🔒 Encrypt (Blur) Image</a></li>
+        <li><a href="/image-unblur">🔓 Decrypt (Unblur) Image</a></li>
+    </ul>
+
+    <h3>🔹 User Authentication 🔹</h3>
+    <ul>
+        <li><a href="/login">Login as Root User</a></li>
+    </ul>
+
 </body>
 </html>
