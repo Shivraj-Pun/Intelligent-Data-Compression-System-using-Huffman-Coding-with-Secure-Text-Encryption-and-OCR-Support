@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head><title>Compress Image</title></head>
+<head>
+    <title>Image Compression</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/scripts.js"></script>
+</head>
 <body>
-  <h2>Upload Image to Compress</h2>
-  <form action="/compress_image" method="POST" enctype="multipart/form-data">
-    <input type="file" name="image" required />
-    <button type="submit">Compress</button>
-  </form>
+    <h2>🖼️ Compress Image File</h2>
+    <form action="/compress_image" method="POST" enctype="multipart/form-data" onsubmit="showSpinner(); showProgress();">
+        <input type="file" name="file" required>
+        <button type="submit">Compress Image</button>
+    </form>
+
+    <img id="loading-spinner" src="/static/spinner.gif" alt="Loading..." width="50">
+    <div class="progress">
+        <div class="progress-bar">0%</div>
+    </div>
+    <div id="toast" class="toast"></div>
 </body>
 </html>
