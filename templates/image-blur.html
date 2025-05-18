@@ -2,24 +2,21 @@
 <html>
 <head>
     <title>Image Blurring</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/scripts.js"></script>
 </head>
 <body>
-    <h2>Blur Text in Image</h2>
-    <form method="post" enctype="multipart/form-data">
-        <input type="file" name="image" required><br>
-        <input type="password" name="password" placeholder="Enter Root Password" required><br>
+    <h2>🔒 Blur Text in Image</h2>
+    <form action="/image-blur" method="POST" enctype="multipart/form-data" onsubmit="showSpinner(); showProgress();">
+        <input type="file" name="image" required>
+        <input type="password" name="password" placeholder="Enter Root Password" required>
         <button type="submit">Blur and Download</button>
     </form>
-    {% with messages = get_flashed_messages() %}
-      {% if messages %}
-        <ul>
-          {% for message in messages %}
-            <li>{{ message }}</li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-    {% endwith %}
-    <br>
-    <a href="/image-unblur">Unblur Image (Root Only)</a>
+
+    <img id="loading-spinner" src="/static/spinner.gif" alt="Loading..." width="50">
+    <div class="progress">
+        <div class="progress-bar">0%</div>
+    </div>
+    <div id="toast" class="toast"></div>
 </body>
 </html>
