@@ -1,4 +1,21 @@
-<form action="/decompress_audio" method="POST" enctype="multipart/form-data">
-    <input type="file" name="file" required>
-    <button type="submit">Decompress Audio File</button>
-</form>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Audio Decompression</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/scripts.js"></script>
+</head>
+<body>
+    <h2>🎵 Decompress Audio File</h2>
+    <form action="/decompress_audio" method="POST" enctype="multipart/form-data" onsubmit="showSpinner(); showProgress();">
+        <input type="file" name="file" required>
+        <button type="submit">Decompress Audio</button>
+    </form>
+
+    <img id="loading-spinner" src="/static/spinner.gif" alt="Loading..." width="50">
+    <div class="progress">
+        <div class="progress-bar">0%</div>
+    </div>
+    <div id="toast" class="toast"></div>
+</body>
+</html>
