@@ -2,21 +2,21 @@
 <html>
 <head>
     <title>Image Unblurring</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/scripts.js"></script>
 </head>
 <body>
-    <h2>Unblur Image (Root Only)</h2>
-    <form method="post">
-        <input type="password" name="password" placeholder="Enter Root Password" required><br>
+    <h2>🔓 Unblur Image (Root Only)</h2>
+    <form action="/image-unblur" method="POST" enctype="multipart/form-data" onsubmit="showSpinner(); showProgress();">
+        <input type="file" name="image" required>
+        <input type="password" name="password" placeholder="Enter Root Password" required>
         <button type="submit">Unblur and Download</button>
     </form>
-    {% with messages = get_flashed_messages() %}
-      {% if messages %}
-        <ul>
-          {% for message in messages %}
-            <li>{{ message }}</li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-    {% endwith %}
+
+    <img id="loading-spinner" src="/static/spinner.gif" alt="Loading..." width="50">
+    <div class="progress">
+        <div class="progress-bar">0%</div>
+    </div>
+    <div id="toast" class="toast"></div>
 </body>
 </html>
