@@ -1,4 +1,5 @@
 # text_compression.py
+#Ajay Singh
 from collections import Counter
 import pickle
 
