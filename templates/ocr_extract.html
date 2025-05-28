@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OCR Extraction</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h2>🧠 OCR Text Extraction</h2>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div style="background:#4caf50cc; padding: 10px 20px; margin: 20px auto; width: 70%; font-size: 18px; border-radius: 10px;">
+          {% for message in messages %}
+            {{ message }}
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <form action="/ocr_extract" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <button type="submit">Upload & Extract Text</button>
+    </form>
+
+    {% if extracted_file %}
+    <div style="margin-top: 20px; text-align: center;">
+        <a href="{{ url_for('download_extracted_file', filename=extracted_file) }}" class="download-link">
+            📥 Download Extracted Text File
+        </a>
+    </div>
+    {% endif %}
+</body>
+</html>
